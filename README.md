@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+Formulario React con Bootstrap y Validaciones
+Este proyecto implementa un formulario de registro de usuario desarrollado en React con estilos de Bootstrap 5 y validaciones dinámicas en tiempo real.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📋 Prerrequisitos
+Antes de comenzar, asegúrate de tener instalado:
 
-## Available Scripts
+Node.js (versión 14 o superior)
+npm (viene incluido con Node.js)
 
-In the project directory, you can run:
+🛠️ Instalación
+Paso 1: Clonar el repositorio
+bashgit clone https://github.com/rcornejom06/TRABAJO_EXPERIMENTAL_2-DESARROLLO-WEB.git
+cd TRABAJO_EXPERIMENTAL_2-DESARROLLO-WEB
+Paso 2: Instalar dependencias
+bashnpm install
+Paso 3: Ejecutar el proyecto
+bashnpm start
+El formulario estará disponible en http://localhost:3000
 
-### `npm start`
+📝 Funcionalidades del Formulario
+Campos de entrada:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Nombre: Requiere al menos 2 caracteres
+Correo: Debe tener formato de email válido (ejemplo@dominio.com)
+Contraseña: Debe tener al menos 8 caracteres
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Validaciones implementadas:
 
-### `npm test`
+✅ Validación en tiempo real: Se ejecuta mientras el usuario escribe
+✅ Validación al perder foco: Se ejecuta cuando el usuario sale del campo
+✅ Validación al enviar: Se ejecuta al hacer submit del formulario
+✅ Feedback visual: Los campos cambian de color según su estado
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🟢 Verde = Campo válido
+🔴 Rojo = Campo con errores
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Mensajes específicos: Error personalizado para cada tipo de validación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Características adicionales:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📊 Contador de caracteres para la contraseña
+📱 Diseño responsivo adaptable a móviles y tablets
+🧹 Limpieza automática del formulario tras envío exitoso
+♿ Accesibilidad con labels asociados a inputs
 
-### `npm run eject`
+🎨 Clases de Bootstrap Utilizadas
+Layout responsivo:
+container - Contenedor principal
+row - Sistema de filas
+col-md-6 col-lg-4 - Columnas responsivas
+justify-content-center - Centrado horizontal
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Componentes:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+card - Tarjeta contenedora
+card-header - Encabezado con fondo azul
+card-body - Cuerpo del formulario
+card-footer - Pie con texto informativo
+shadow - Sombra elegante
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Formularios:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+form-label - Etiquetas de campos
+form-control - Estilos de inputs
+is-valid / is-invalid - Estados de validación
+invalid-feedback - Mensajes de error
+form-text - Texto de ayuda
 
-## Learn More
+Botones y utilidades:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+btn btn-primary btn-lg - Botón principal grande
+d-grid - Layout de botón completo
+mb-3 - Márgenes entre campos
+text-white - Texto blanco
+bg-primary - Fondo azul
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🏗️ Estructura del Código
+src/
+├── App.js          # Componente principal con toda la lógica
+├── index.js        # Punto de entrada de React
+├── App.css         # Estilos adicionales (si los hay)
+└── index.css       # Estilos globales
 
-### Code Splitting
+🧪 Pruebas del Formulario
+Para probar las validaciones:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Nombre inválido:
 
-### Analyzing the Bundle Size
+Escribir solo 1 carácter → Error: "El nombre debe tener al menos 2 caracteres"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Email inválido:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Escribir "correo" → Error: "Email inválido"
+Escribir "correo@" → Error: "Email inválido"
+Correcto: "correo@ejemplo.com" → ✅ Válido
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contraseña inválida:
 
-### Deployment
+Escribir "123" → Error: "Mínimo 8 caracteres" + Contador: 3/8
+Escribir "12345678" → ✅ Válido
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+Envío del formulario:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Con errores → Muestra todos los errores
+Sin errores → Alert de éxito + limpia formulario
+
+
+🚀 Comandos Disponibles
+En el directorio del proyecto puedes ejecutar:
+npm start
+Ejecuta la aplicación en modo desarrollo.
+Abre http://localhost:3000 en el navegador.
+npm run build
+Construye la aplicación para producción en la carpeta build.
+npm test
+Ejecuta las pruebas en modo interactivo.
+npm run eject
+Nota: Esta operación es irreversible.
+
+📱 Compatibilidad
+
+✅ Desktop: Todas las resoluciones
+✅ Tablet: iPad y similares
+✅ Mobile: iPhone, Android
+✅ Navegadores: Chrome, Firefox, Safari, Edge
+
