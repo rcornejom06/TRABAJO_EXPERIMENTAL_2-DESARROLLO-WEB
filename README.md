@@ -11,10 +11,12 @@ Este proyecto implementa un **formulario de registro de usuario** desarrollado e
 git clone https://github.com/rcornejom06/TRABAJO_EXPERIMENTAL_2-DESARROLLO-WEB.git
 cd TRABAJO_EXPERIMENTAL_2-DESARROLLO-WEB
 
-Paso 2: Instalar dependencias
+### Paso 2: Instalar dependencias
+```bash
 npm install
 
-Paso 3: Ejecutar el proyecto
+###Paso 3: Ejecutar el proyecto
+```bash
 npm start
 
 
