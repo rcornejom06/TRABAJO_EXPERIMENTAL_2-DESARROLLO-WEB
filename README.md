@@ -1,11 +1,6 @@
 Formulario React con Bootstrap y Validaciones
 Este proyecto implementa un formulario de registro de usuario desarrollado en React con estilos de Bootstrap 5 y validaciones dinámicas en tiempo real.
 
-📋 Prerrequisitos
-Antes de comenzar, asegúrate de tener instalado:
-
-Node.js (versión 14 o superior)
-npm (viene incluido con Node.js)
 
 🛠️ Instalación
 Paso 1: Clonar el repositorio
